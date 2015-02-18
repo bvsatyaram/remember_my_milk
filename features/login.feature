@@ -6,7 +6,7 @@ Feature: Login
   @javascript
   Scenario: Signup Failure
     Given that a user with email "user@example.com" and password "rahasyam" exist
-    And  I am in home page
+    And I am in home page
     When I press "Signup" in "header"
     And I fill in "user[email]" with "user@example.com"
     And I fill in "user[password]" with "rahasyam"

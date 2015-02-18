@@ -1,6 +1,11 @@
 FactoryGirl.define do
+  sequence :title do |n|
+    "Task ##{n}"
+  end
+
   factory :task do
-    title "MyString"
+    title
+    user
   end
 
 end

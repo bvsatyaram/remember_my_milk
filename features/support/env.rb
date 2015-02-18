@@ -66,3 +66,4 @@ Capybara.javascript_driver = :chrome
 Capybara.app_host = "http://localhost:3456"
 Capybara.server_host = "localhost"
 Capybara.server_port = "3456"
+Capybara.default_wait_time = 5

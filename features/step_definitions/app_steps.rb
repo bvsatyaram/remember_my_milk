@@ -33,16 +33,23 @@ When(/^I follow the link "(.*?)" in the last email sent to "(.*?)"$/) do |link_t
 end
 
 Given(/^that a user with email "(.*?)" and password "(.*?)" exist$/) do |email, password|
-  usr = User.create(email: email, password: password, password_confirmation: password)
+  usr = User.find_or_create_by(email: email) do |user|
+    user.password = password
+    user.password_confirmation= password
+  end
   usr.confirm!
 end
 
-Given(/^I am logged in$/) do
-  step 'that a user with email "user@example.com" and password "rahasyam" exist'
+Given(/^I log in as "(.*?)"$/) do |email|
+  step "that a user with email \"#{email}\" and password \"rahasyam\" exist"
   step 'I am in home page'
-  step 'I fill in "user[email]" with "user@example.com"'
+  step "I fill in \"user[email]\" with \"#{email}\""
   step 'I fill in "user[password]" with "rahasyam"'
   step 'I press "Login" in "form"'
+end
+
+Given(/^I am logged in$/) do
+  step 'I log in as "user@example.com"'
 end
 
 Then(/I debug/) do

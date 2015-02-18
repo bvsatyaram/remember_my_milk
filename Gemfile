@@ -59,6 +59,8 @@ group :development, :test do
   gem 'capybara-email'
 end
 
+gem "letter_opener", :group => :development
+
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'devise'

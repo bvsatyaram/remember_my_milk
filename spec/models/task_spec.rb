@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
+  subject {create(:task)}
+
+  it "belongs to user" do
+    expect(subject.user).to be_an_instance_of(User)
+  end
 end
