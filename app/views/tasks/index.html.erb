@@ -1,0 +1,10 @@
+<h1>My Tasks</h1>
+
+<%= simple_form_for @new_task, remote: true, html: {id: "task_form", class: "form-horizontal"} do |f| %>
+  <%= f.input :title, label: false, placeholder: "Eg. Remember to get milk" %>
+  <%= f.submit "Add Task" %>
+<% end %>
+
+<ul id="tasks">
+  <%= render @tasks %>
+</ul>

@@ -56,5 +56,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'guard-cucumber'
   gem 'selenium-webdriver'
+  gem 'capybara-email'
 end
 
+gem 'simple_form'
+gem 'bootstrap-sass'
+gem 'devise'
